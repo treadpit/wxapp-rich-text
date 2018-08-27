@@ -17,3 +17,5 @@ const html =
 html2json(html);
 
 ```
+
+![](https://raw.githubusercontent.com/treadpit/wxapp-rich-text/master/screentshot/test.png)
