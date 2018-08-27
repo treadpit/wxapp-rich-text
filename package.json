@@ -1,0 +1,29 @@
+{
+  "name": "wxapp-rich-text",
+  "version": "1.0.0",
+  "description": "将富文本转为微信小程序 rich-text 组件支持的 json 格式",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.17.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^6.0.0",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1"
+  },
+  "keywords": [
+    "微信小程序",
+    "富文本",
+    "json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/treadpit/wxapp-rich-text.git"
+  },
+  "author": "treadpit",
+  "license": "MIT"
+}
