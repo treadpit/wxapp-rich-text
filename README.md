@@ -6,6 +6,10 @@
 
 使用方法：
 
+```xml
+<rich-text nodes="{{nodes}}"></rich-text>
+```
+
 ```js
 import html2json from 'wxapp-rich-text';
 // 或者下载该仓库
@@ -14,8 +18,10 @@ import html2json from './your/path/index.js';
 const html =
   '<div id="this-id" class="this-class">sample<br/>text<h2 style="color: red;font-size:48rpx;">sample text</h2></div>';
 
-html2json(html);
-
+const json = html2json(html);
+this.setData({
+  nodes: json,
+})
 ```
 
 ![](https://raw.githubusercontent.com/treadpit/wxapp-rich-text/master/screentshot/test.png)
