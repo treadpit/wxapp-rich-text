@@ -8,7 +8,7 @@ function removeDOCTYPE(html) {
     .replace(/<!DOCTYPE.*>\n/, '');
 }
 
-export default function html2json(html) {
+export function html2json(html) {
   html = removeDOCTYPE(html);
   var bufArray = [];
   var results = {
