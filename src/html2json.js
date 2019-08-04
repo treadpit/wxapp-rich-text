@@ -8,6 +8,21 @@ function removeDOCTYPE(html) {
     .replace(/<!DOCTYPE.*>\n/, '');
 }
 
+function transformClassAttr(results) {
+  if (results && results.length) {
+    results.map((item = {}) => {
+      const { attrs = {}, children } = item;
+      if (attrs.class && Object.prototype.toString.call(attrs.class) === '[object Array]') {
+        item.attrs.class = item.attrs.class.join(' ');
+      }
+      if (children && Object.prototype.toString.call(children) === '[object Array]') {
+        transformClassAttr(children);
+      }
+    });
+  }
+  return results;
+}
+
 export function html2json(html) {
   html = removeDOCTYPE(html);
   var bufArray = [];
@@ -114,5 +129,6 @@ export function html2json(html) {
       parent.children.push(node);
     }
   });
-  return results.children;
+  const rst = transformClassAttr(results.children);
+  return rst;
 }
