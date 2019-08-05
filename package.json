@@ -1,19 +1,43 @@
 {
-  "name": "wxapp-rich-text",
+  "name": "wx-rich-text",
   "version": "1.0.1",
   "description": "将富文本转为微信小程序 rich-text 组件支持的 json 格式",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "fix": "eslint src --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run fix",
+      "prettier --write",
+      "git add ."
+    ],
+    "*.wxss": [
+      "npm run fix:wxss",
+      "git add ."
+    ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
     "babel-eslint": "^8.2.1",
     "eslint": "^4.17.0",
+    "eslint-config-prettier": "^6.0.0",
     "eslint-config-standard": "^11.0.0-beta.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-node": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-standard": "^3.0.1"
+    "eslint-plugin-standard": "^3.0.1",
+    "husky": "^3.0.2",
+    "lint-staged": "^9.2.1",
+    "prettier": "^1.18.2"
   },
   "keywords": [
     "微信小程序",

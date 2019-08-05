@@ -213,12 +213,12 @@ export function HTMLParser(html, handler) {
         var value = arguments[2]
           ? arguments[2]
           : arguments[3]
-            ? arguments[3]
-            : arguments[4]
-              ? arguments[4]
-              : fillAttrs[name]
-                ? name
-                : '';
+          ? arguments[3]
+          : arguments[4]
+          ? arguments[4]
+          : fillAttrs[name]
+          ? name
+          : '';
 
         attrs.push({
           name: name,

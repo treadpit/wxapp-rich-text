@@ -12,10 +12,16 @@ function transformClassAttr(results) {
   if (results && results.length) {
     results.map((item = {}) => {
       const { attrs = {}, children } = item;
-      if (attrs.class && Object.prototype.toString.call(attrs.class) === '[object Array]') {
+      if (
+        attrs.class &&
+        Object.prototype.toString.call(attrs.class) === '[object Array]'
+      ) {
         item.attrs.class = item.attrs.class.join(' ');
       }
-      if (children && Object.prototype.toString.call(children) === '[object Array]') {
+      if (
+        children &&
+        Object.prototype.toString.call(children) === '[object Array]'
+      ) {
         transformClassAttr(children);
       }
     });
