@@ -1,6 +1,6 @@
 {
   "name": "wx-rich-text",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "将富文本转为微信小程序 rich-text 组件支持的 json 格式",
   "main": "index.js",
   "scripts": {
